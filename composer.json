@@ -1,0 +1,20 @@
+{
+    "name": "tongtrankien1605/fpoly-base-web3014",
+    "autoload": {
+        "psr-4": {
+            "Tongtrankien1605\\FpolyBaseWeb3014\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tongtrankien1605",
+            "email": "tongtrankien1605@gmail.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6",
+        "eftec/bladeone": "^4.13",
+        "doctrine/dbal": "^4.0",
+        "rakit/validation": "^1.4"
+    }
+}
