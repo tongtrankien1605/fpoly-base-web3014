@@ -2,7 +2,6 @@
 
 namespace Tongtrankien1605\FpolyBaseWeb3014\Controllers\Admin;
 
-use Rakit\Validation\Rules\Url;
 use Tongtrankien1605\FpolyBaseWeb3014\Commons\Controller;
 use Tongtrankien1605\FpolyBaseWeb3014\Commons\Helper;
 use Tongtrankien1605\FpolyBaseWeb3014\Models\User;
@@ -18,9 +17,21 @@ class UserController extends Controller
 
     public function index()
     {
-        Helper::debug($this->user->all());
 
-        echo __CLASS__ . '@' . __FUNCTION__;
+        [$users, $totalPage] = $this->user->paginate($_GET['page'] ?? 1);
+
+        // $users = $this->user->all();
+
+
+        // Helper::debug($users);
+
+        $this->renderViewAdmin('users.index', [
+            'users' => $users,
+            'totalpage' => $totalPage
+        ]);
+
+
+
     }
 
     public function create()
@@ -35,7 +46,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        echo __CLASS__ . '@' . __FUNCTION__;
+        echo __CLASS__ . '@' . __FUNCTION__ . ' - ID = ' . $id;
     }
 
     public function edit($id)

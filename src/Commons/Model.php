@@ -13,7 +13,7 @@ class Model
     protected QueryBuilder $queryBuilder;
     protected string $tableName;
 
-    protected function __construct()
+    public function __construct()
     {
         $connectionParams = [
 
@@ -56,9 +56,12 @@ class Model
         $data = $this->queryBuilder
             ->select('*')
             ->from($this->tableName)
+
             ->setFirstResult($offset)
             ->setMaxResults($perPage)
+
             ->orderBy('id', 'desc')
+            
             ->fetchAllAssociative();
 
         $totalPage = ceil($this->count() / $perPage);

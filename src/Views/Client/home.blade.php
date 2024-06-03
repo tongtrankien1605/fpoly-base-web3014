@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
-    <h1> Welcome {{ $name }} to my website! </h1>
+    <h1 style="color: #33FFFF"> Welcome {{ $name }} to my website! </h1>
 </body>
 </html>
